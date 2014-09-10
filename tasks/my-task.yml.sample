@@ -1,0 +1,22 @@
+---
+id: my-task
+name: My Task
+type: task
+
+# Define vars
+vars:
+  workdir: /tmp/workdir
+
+# Define when to run the task
+triggers:
+  webhooks:
+    - path: some/secret/path
+
+# Define which targets / nodes to run the task on
+targets:
+  - new-node
+
+# Define the list of commands to execute
+steps:
+  - run: mkdir {{ workdir }}
+  - run: devops scripts/my-script.sh

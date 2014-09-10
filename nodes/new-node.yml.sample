@@ -1,0 +1,14 @@
+---
+id: new-node
+name: New Node
+type: server
+
+provider:
+  name: digitalocean
+  size: 66
+  location: 3
+  image: ubuntu14.04
+
+services:
+  nginx: '*'
+  couchdb: '*'
