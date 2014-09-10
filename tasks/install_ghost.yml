@@ -12,6 +12,7 @@ vars:
   domain: ansbotanics.com
 
 steps:
+  - run: sudo apt-get install zip unzip
   - run: curl -L https://ghost.org/zip/ghost-latest.zip -o ghost.zip
   - run: unzip -uo ghost.zip -d {{build}}
   - run: cd {{build}}
