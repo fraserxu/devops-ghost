@@ -1,0 +1,19 @@
+# Find out more about tasks: http://docs.devo.ps/manual/tasks
+
+id: install_ghost
+name: Install ghost
+type: task
+
+targets:
+  - nodejs_server
+
+vars:
+  build: /opt/ghost
+  domain: ansbotanics.com
+
+steps:
+  - run: curl -L https://ghost.org/zip/ghost-latest.zip -o ghost.zip
+  - run: unzip -uo ghost.zip -d {{build}}
+  - run: cd {{build}}
+  - run: npm install --production
+ 
