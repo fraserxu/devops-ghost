@@ -1,0 +1,16 @@
+# Find out more about nodes: http://docs.devo.ps/manual/nodes
+
+id: ansbotanics
+name: ansbotanics
+type: server
+
+# Find out more about providers and their defaults
+# in their respective documentations
+provider:
+  name: digitalocean 
+  size: 66
+  location: 6
+  
+services:
+  nodejs: '*'
+  nginx: '*'
