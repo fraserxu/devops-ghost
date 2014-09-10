@@ -5,7 +5,7 @@ name: Install ghost
 type: task
 
 targets:
-  - nodejs_server
+  - ansbotanics
 
 vars:
   build: /opt/ghost
