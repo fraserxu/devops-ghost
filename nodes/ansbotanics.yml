@@ -20,10 +20,9 @@ configuration:
     vhosts:
       - id: my_vhost
         port: 80
-        domain: ansbotanics.com
+        domain: 'ansbotanics.com'
         aliases: www.ansbotanics.com
-        webroot: public
         routes:
-          - uri: '/'
+          - uri: /
             type: proxy 
-            to: localhost:2368
+            to: http://localhost:2368
