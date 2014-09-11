@@ -17,5 +17,5 @@ steps:
   - run: mkdir -p {{build}}
   - run: unzip -uo ghost.zip -d {{build}}
   - run: cd {{build}} && npm install --production
-  - run: cd {{build}} && NODE_ENV=production forever restart index.js
+  - run: cd {{build}} && NODE_ENV=production forever start index.js
  
