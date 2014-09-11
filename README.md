@@ -1,6 +1,6 @@
 # Ghost
 
-Setting up **two** ghost blogs with [devo.ps](devo.ps) on one digitalocean box.
+Setting up **two** [ghost](ghost.org) blogs with [devo.ps](devo.ps) on **one** digitalocean box.
 
 ## Install
 
@@ -10,7 +10,7 @@ Simply use the link below:
 
 Once you've forked the repository, open it in devo.ps and you will be prompted for a few settings, including the Git URL for the code of your application.
 
-To deploy your app, you will need to navigate to the tasks page of the repo and run the task manually (click on "play" icon, right of the "Build Laravel app" task).
+To deploy your app, you will need to navigate to the tasks page of the repo and run the task manually (click on "play" icon, right of the "Install ghost app" task).
 
 ## What's in the box?
 
