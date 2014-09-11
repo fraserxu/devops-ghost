@@ -16,6 +16,9 @@ services:
   nginx: '*'
 
 configuration:
+  nodejs:
+    packages:
+      - forever
   nginx:
     vhosts:
       - id: my_vhost
