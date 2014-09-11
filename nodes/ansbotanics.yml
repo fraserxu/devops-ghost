@@ -14,3 +14,16 @@ provider:
 services:
   nodejs: '*'
   nginx: '*'
+
+configuration:
+  nginx:
+    vhosts:
+      - id: my_vhost
+        port: 80
+        domain: ansbotanics.com
+        aliases: www.ansbotanics.com
+        webroot: public
+        routes:
+          - uri: '/'
+            type: proxy 
+            to: localhost:2368
