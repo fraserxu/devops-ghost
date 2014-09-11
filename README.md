@@ -1,6 +1,6 @@
 # Readme
 
-Go ahead and update the content of this file to describe your repository and your architecture.
+Setting up **two** ghost blogs with [devo.ps](devo.ps) on one digitalocean box.
 
 # Documentation
 
