@@ -21,7 +21,7 @@ configuration:
       - forever
   nginx:
     vhosts:
-      - id: my_vhost
+      - id: ansbotanics
         port: 80
         domain: 'ansbotanics.com'
         aliases: www.ansbotanics.com
@@ -29,3 +29,10 @@ configuration:
           - uri: /
             type: proxy 
             to: http://localhost:2368
+      - id: fraserxu
+        port: 80
+        domain: 'blog.xvfeng.me'
+        routes:
+          - uri: /
+            type: proxy 
+            to: http://localhost:2369
