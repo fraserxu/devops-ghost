@@ -16,4 +16,5 @@ steps:
   - run: curl -L https://ghost.org/zip/ghost-latest.zip -o ghost.zip
   - run: sudo unzip -uo ghost.zip -d {{build}}
   - run: cd {{build}} && sudo npm install --production
+  - run: cd {{build}} && NODE_ENV=production forever start index.js
  
