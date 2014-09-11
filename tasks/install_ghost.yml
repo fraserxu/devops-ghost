@@ -8,7 +8,7 @@ targets:
   - ansbotanics
 
 vars:
-  build: /opt/ghost
+  build: /var/www
   domain: ansbotanics.com
 
 steps:
