@@ -8,14 +8,18 @@ targets:
   - ansbotanics
 
 vars:
-  build: /var/www
-  domain: ansbotanics.com
+  ansbotanics: /var/www/ansbotanics
+  fraserxu: /var/www/fraserxu
 
 steps:
   - run: sudo apt-get install zip unzip
   - run: curl -L https://ghost.org/zip/ghost-latest.zip -o ghost.zip
-  - run: mkdir -p {{build}}
-  - run: unzip -uo ghost.zip -d {{build}}
-  - run: cd {{build}} && npm install --production
-  - run: cd {{build}} && NODE_ENV=production forever start index.js
+  - run: mkdir -p {{ansbotanics}}
+  - run: mkdir -p {{fraserxu}}
+  - run: unzip -uo ghost.zip -d {{ansbotanics}}
+  - run: unzip -uo ghost.zip -d {{fraserxu}}
+  - run: cd {{ansbotanics}} && npm install --production
+  - run: cd {{fraserxu}} && npm install --production
+  - run: cd {{ansbotanics}} && NODE_ENV=production forever start {{ansbotanics}}/index.js
+  - run: cd {{fraserxu}} && NODE_ENV=production forever start rt {{fraserxu}}/index.js
  
