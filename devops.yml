@@ -1,6 +1,6 @@
 name: Ghost
 description: Setting up two ghost blogs with devo.ps on **one** digitalocean box.
-image: https://cloud.githubusercontent.com/assets/1183541/4235738/07ddc9d8-39c2-11e4-9166-a334bd488d9b.png
+image: https://cloud.githubusercontent.com/assets/1183541/4235989/00801dce-39c4-11e4-8548-9d3456f9d19f.png
 vars:
   provider.name:
     label: Cloud provider
