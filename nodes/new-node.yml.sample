@@ -1,14 +1,38 @@
----
-id: new-node
-name: New Node
+# Find out more about nodes: http://docs.devo.ps/manual/nodes
+
+id: ghost
+name: ghost
 type: server
 
+# Find out more about providers and their defaults
+# in their respective documentations
 provider:
   name: digitalocean
   size: 66
-  location: 3
-  image: ubuntu14.04
+  location: 6
 
 services:
+  nodejs: '*'
   nginx: '*'
-  couchdb: '*'
+
+configuration:
+  nodejs:
+    packages:
+      - forever
+  nginx:
+    vhosts:
+      - id: ghost
+        port: 80
+        domain: 'ghost.com'
+        aliases: www.ghost.com
+        routes:
+          - uri: /
+            type: proxy
+            to: http://localhost:2368
+      - id: fraserxu
+        port: 80
+        domain: 'blog.xvfeng.me'
+        routes:
+          - uri: /
+            type: proxy
+            to: http://localhost:2369

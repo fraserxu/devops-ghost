@@ -1,22 +1,24 @@
----
-id: my-task
-name: My Task
+# Find out more about tasks: http://docs.devo.ps/manual/tasks
+
+id: install_ghost
+name: Install ghost
 type: task
 
-# Define vars
-vars:
-  workdir: /tmp/workdir
-
-# Define when to run the task
-triggers:
-  webhooks:
-    - path: some/secret/path
-
-# Define which targets / nodes to run the task on
 targets:
-  - new-node
+  - ansbotanics
 
-# Define the list of commands to execute
+vars:
+  ansbotanics: /var/www/ansbotanics
+  fraserxu: /var/www/fraserxu
+
 steps:
-  - run: mkdir {{ workdir }}
-  - run: devops scripts/my-script.sh
+  - run: sudo apt-get install zip unzip
+  - run: curl -L https://ghost.org/zip/ghost-latest.zip -o ghost.zip
+  - run: mkdir -p {{ansbotanics}}
+  - run: mkdir -p {{fraserxu}}
+  - run: unzip -uo ghost.zip -d {{ansbotanics}}
+  - run: unzip -uo ghost.zip -d {{fraserxu}}
+  - run: cd {{ansbotanics}} && npm install --production
+  - run: cd {{fraserxu}} && npm install --production
+  - run: cd {{ansbotanics}} && NODE_ENV=production forever start {{ansbotanics}}/index.js
+  - run: cd {{fraserxu}} && NODE_ENV=production forever start {{fraserxu}}/index.js
